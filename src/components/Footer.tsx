@@ -152,10 +152,10 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#D4A45B] shrink-0" />
                 <a
-                  href={`mailto:${brandConfig.supportEmail || 'care@uzvifurniture.com'}`}
+                  href={`mailto:${brandConfig.supportEmail || 'care@qatarelitedecor.com'}`}
                   className="hover:text-white transition-colors"
                 >
-                  {brandConfig.supportEmail || 'care@uzvifurniture.com'}
+                  {brandConfig.supportEmail || 'care@qatarelitedecor.com'}
                 </a>
               </div>
               <div className="flex items-center gap-2.5 text-[11px] text-[#A5B5AD]">

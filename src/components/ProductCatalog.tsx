@@ -100,7 +100,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search wooden lamps, beds, sofas, tables..."
               aria-label="Search products"
-              className="w-full pl-10 pr-3.5 h-11 border border-[#E8E0D5] rounded-lg bg-white text-xs sm:text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+              className="w-full pl-10 pr-3.5 h-12 sm:h-11 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-sm text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
             />
           </div>
           <div className="flex items-center gap-2">
@@ -112,7 +112,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               aria-label="Sort products"
               value={sortBy}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="w-full sm:w-auto h-11 px-3 border border-[#E8E0D5] rounded-lg bg-white text-xs sm:text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+              className="w-full sm:w-auto h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
             >
               <option value="featured">Sort: Featured</option>
               <option value="low">Price: Low to High</option>

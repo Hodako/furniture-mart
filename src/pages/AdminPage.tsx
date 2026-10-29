@@ -102,7 +102,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   const [supportPhone, setSupportPhone] = useState(brandConfig.supportPhone);
   const [showroomAddress, setShowroomAddress] = useState(brandConfig.showroomAddress);
   const [supportEmail, setSupportEmail] = useState(
-    brandConfig.supportEmail || 'care@uzvifurniture.com'
+    brandConfig.supportEmail || 'care@qatarelitedecor.com'
   );
   const [whatsappNumber, setWhatsappNumber] = useState(
     brandConfig.whatsappNumber || brandConfig.supportPhone
@@ -400,7 +400,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `uzvi-store-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `qatar-elite-decor-backup-${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -795,7 +795,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     value={productSearch}
                     onChange={(e) => setProductSearch(e.target.value)}
                     placeholder="Search by furniture title, category, or material..."
-                    className="w-full h-10 pl-9 pr-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-10 pl-9 pr-3.5 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                   {productSearch && (
                     <button
@@ -812,7 +812,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   <select
                     value={stockFilter}
                     onChange={(e) => setStockFilter(e.target.value as any)}
-                    className="h-10 px-3 border border-[#E8E0D5] rounded-lg text-xs bg-white text-[#292720] font-medium focus:outline-none focus:border-[#183D32]"
+                    className="h-12 sm:h-10 px-3 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-xs bg-white text-[#292720] font-medium focus:outline-none focus:border-[#183D32]"
                   >
                     <option value="all">All Stock Status</option>
                     <option value="inStock">In Stock Only</option>
@@ -1005,7 +1005,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     value={orderSearch}
                     onChange={(e) => setOrderSearch(e.target.value)}
                     placeholder="Search by Order ID, customer name, phone, or delivery address..."
-                    className="w-full h-10 pl-9 pr-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-10 pl-9 pr-3.5 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                   {orderSearch && (
                     <button
@@ -1023,7 +1023,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   <select
                     value={orderStatusFilter}
                     onChange={(e) => setOrderStatusFilter(e.target.value as any)}
-                    className="h-10 px-3 border border-[#E8E0D5] rounded-lg text-xs bg-white text-[#292720] font-semibold focus:outline-none focus:border-[#183D32]"
+                    className="h-12 sm:h-10 px-3 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-xs bg-white text-[#292720] font-semibold focus:outline-none focus:border-[#183D32]"
                   >
                     <option value="All">All Orders ({orders.length})</option>
                     <option value="Preparing Shipment">Preparing Shipment</option>
@@ -1296,7 +1296,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     value={waRecipientName}
                     onChange={(e) => setWaRecipientName(e.target.value)}
                     placeholder="e.g. Mahfuz Rahman"
-                    className="w-full h-10 px-3 border border-[#E8E0D5] rounded-lg text-xs focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-10 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
 
@@ -1305,12 +1305,13 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     Customer WhatsApp Phone *
                   </label>
                   <input
-                    type="text"
+                    type="tel"
+                    inputMode="tel"
                     required
                     value={waRecipientPhone}
                     onChange={(e) => setWaRecipientPhone(e.target.value)}
                     placeholder="e.g. 01711849200 or +8801711849200"
-                    className="w-full h-10 px-3 border border-[#E8E0D5] rounded-lg text-xs focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-10 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
               </div>
@@ -1325,7 +1326,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   value={waCustomMessage}
                   onChange={(e) => setWaCustomMessage(e.target.value)}
                   placeholder="Type your WhatsApp message text..."
-                  className="w-full p-3 border border-[#E8E0D5] rounded-lg text-xs leading-relaxed focus:outline-none focus:border-[#183D32]"
+                  className="w-full p-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-xs leading-relaxed focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                 />
               </div>
 
@@ -1489,7 +1490,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     type="text"
                     value={heroTitle}
                     onChange={(e) => setHeroTitle(e.target.value)}
-                    className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
 
@@ -1501,7 +1502,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     rows={2}
                     value={heroSubtitle}
                     onChange={(e) => setHeroSubtitle(e.target.value)}
-                    className="w-full p-3 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                    className="w-full p-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
 
@@ -1512,9 +1513,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     </label>
                     <input
                       type="number"
+                      inputMode="numeric"
                       value={freeShippingThreshold}
                       onChange={(e) => setFreeShippingThreshold(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
 
@@ -1523,10 +1525,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       Showroom Hotline
                     </label>
                     <input
-                      type="text"
+                      type="tel"
+                      inputMode="tel"
                       value={supportPhone}
                       onChange={(e) => setSupportPhone(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
                 </div>
@@ -1540,7 +1543,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       type="text"
                       value={showroomAddress}
                       onChange={(e) => setShowroomAddress(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
 
@@ -1550,9 +1553,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     </label>
                     <input
                       type="email"
+                      inputMode="email"
                       value={supportEmail}
                       onChange={(e) => setSupportEmail(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
                 </div>
