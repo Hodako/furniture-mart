@@ -35,11 +35,11 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { AdminPage } from './pages/AdminPage';
 
 const STORAGE_KEYS = {
-  BRAND: 'uzvi_brand_config_v3',
-  PRODUCTS: 'uzvi_products_v3',
-  CART: 'uzvi_cart_v3',
-  WISHLIST: 'uzvi_wishlist_v3',
-  ORDERS: 'uzvi_orders_v3',
+  BRAND: 'qed_brand_config_v4',
+  PRODUCTS: 'qed_products_v4',
+  CART: 'qed_cart_v4',
+  WISHLIST: 'qed_wishlist_v4',
+  ORDERS: 'qed_orders_v4',
 };
 
 function AppShell({
@@ -59,7 +59,13 @@ export default function App() {
   const [brandConfig, setBrandConfig] = useState<BrandConfig>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.BRAND);
-      return saved ? JSON.parse(saved) : DEFAULT_BRAND_CONFIG;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && parsed.companyName && parsed.companyName !== 'Uzvi Furniture') {
+          return parsed;
+        }
+      }
+      return DEFAULT_BRAND_CONFIG;
     } catch {
       return DEFAULT_BRAND_CONFIG;
     }

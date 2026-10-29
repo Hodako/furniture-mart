@@ -1,38 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Copy, TreePine, Award, ShieldCheck, HeartHandshake } from 'lucide-react';
-import { BrandConfig, DESIGN_SYSTEM_COLORS } from '../data/storeLogic';
+import { TreePine, Award, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { BrandConfig } from '../data/storeLogic';
 
 interface AboutPageProps {
   brandConfig: BrandConfig;
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
-  const [copiedHex, setCopiedHex] = useState<string | null>(null);
-
-  const handleCopyHex = (hex: string) => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(hex).catch(() => {});
-    }
-    setCopiedHex(hex);
-    setTimeout(() => setCopiedHex(null), 1800);
-  };
-
   return (
     <div className="py-6 sm:py-12">
       <div className="w-[min(1200px,94%)] mx-auto">
         {/* Hero Banner */}
-        <div className="bg-[#183D32] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 mb-10 sm:mb-16 relative overflow-hidden">
+        <div className="bg-[#183D32] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 mb-10 sm:mb-16 relative overflow-hidden shadow-xs">
           <div className="relative z-10 max-w-2xl">
             <div className="text-[#D4A45B] text-[10px] sm:text-[11px] font-bold tracking-[2px] sm:tracking-[3px] uppercase">
-              Artisanal Heritage · বাংলাদেশ
+              Artisanal Heritage · Bespoke Living
             </div>
             <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl my-3 text-balance">
               Crafted by Nature, Perfected for Modern Living
             </h1>
             <p className="text-xs sm:text-base text-[#DCE7DF] leading-relaxed mb-6">
-              {brandConfig.companyName} was born from a love for natural wood and simplicity of design.
-              We believe every grain tells a story of time, sincerity, and durability.
+              {brandConfig.companyName} was born from a passion for organic timber and architectural simplicity.
+              We believe every grain tells an enduring story of time, sincerity, and timeless luxury.
             </p>
             <Link
               to="/shop"
@@ -65,7 +55,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
               Burma Teak, Sheesham (Rosewood), White Oak, and Walnut.
             </p>
             <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-6">
-              Our master artisans in Bangladesh use traditional mortise-and-tenon joints, ensuring that your furniture
+              Our master artisans use traditional mortise-and-tenon joints, ensuring that your furniture
               withstands seasonal humidity and temperature shifts without loosening or creaking.
             </p>
 
@@ -91,10 +81,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
         </div>
 
         {/* 4 Pillars */}
-        <div className="mb-12 sm:mb-20">
+        <div className="mb-12 sm:mb-16">
           <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
             <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#292720]">
-              The Four Pillars of Uzvi Craft
+              The Four Pillars of {brandConfig.companyName} Craft
             </h2>
             <p className="text-xs sm:text-sm text-[#777777] mt-1">
               Every detail is engineered with patience and respect for natural resources.
@@ -102,7 +92,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white">
+            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white shadow-2xs">
               <TreePine className="w-8 h-8 text-[#183D32] mb-3" />
               <h3 className="font-bold text-sm sm:text-base text-[#292720] mb-1">
                 Ethical Hardwood
@@ -112,7 +102,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white">
+            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white shadow-2xs">
               <Award className="w-8 h-8 text-[#75472F] mb-3" />
               <h3 className="font-bold text-sm sm:text-base text-[#292720] mb-1">
                 Hand-Rubbed Finishes
@@ -122,7 +112,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white">
+            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white shadow-2xs">
               <ShieldCheck className="w-8 h-8 text-[#183D32] mb-3" />
               <h3 className="font-bold text-sm sm:text-base text-[#292720] mb-1">
                 Precision Joinery
@@ -132,92 +122,15 @@ export const AboutPage: React.FC<AboutPageProps> = ({ brandConfig }) => {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white">
+            <div className="p-5 rounded-xl border border-[#E8E0D5] bg-white shadow-2xs">
               <HeartHandshake className="w-8 h-8 text-[#D4A45B] mb-3" />
               <h3 className="font-bold text-sm sm:text-base text-[#292720] mb-1">
-                Local Artisans
+                Master Craftsmen
               </h3>
               <p className="text-xs text-[#777777] leading-relaxed">
-                Empowering generational carpenters across Bangladesh with fair wages and safe working conditions.
+                Empowering generational carpenters with fair wages, safe workshops, and bespoke artistry.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Color & Design System with Bangla Typography */}
-        <div id="materials" className="bg-[#F7F3ED] rounded-2xl sm:rounded-3xl p-6 sm:p-10 mb-10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
-            <div>
-              <div className="text-[#D4A45B] text-[10px] sm:text-[11px] font-bold tracking-[2px] sm:tracking-[3px] uppercase font-bangla">
-                কালার ও ডিজাইন সিস্টেম · Color & Design System
-              </div>
-              <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#292720] mt-1">
-                Our Signature Brand Palette
-              </h2>
-            </div>
-            <p className="text-xs text-[#75472F] font-bangla font-semibold">
-              উষ্ণ প্রাকৃতিক কাঠ, বনানী সবুজ ও শান্ত সোনালী আভা
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {DESIGN_SYSTEM_COLORS.map((token) => {
-              const isLight =
-                token.hex === '#F7F3ED' || token.hex === '#D4A45B';
-              const isCopied = copiedHex === token.hex;
-
-              return (
-                <div
-                  key={token.id}
-                  className="rounded-xl border border-[#E8E0D5] overflow-hidden bg-white shadow-xs"
-                >
-                  <div
-                    style={{ backgroundColor: token.hex }}
-                    className={`h-24 sm:h-28 p-3 sm:p-4 flex items-end justify-between border-b border-[#E8E0D5] ${
-                      isLight ? 'text-[#292720]' : 'text-white'
-                    }`}
-                  >
-                    <span className="font-mono-tabular text-xs font-bold">
-                      {token.hex}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => handleCopyHex(token.hex)}
-                      aria-label={`Copy hex ${token.hex}`}
-                      className={`cursor-pointer px-2 py-0.5 rounded text-[10px] inline-flex items-center gap-1 ${
-                        isLight
-                          ? 'bg-black/10 hover:bg-black/20 text-[#292720]'
-                          : 'bg-white/20 hover:bg-white/30 text-white'
-                      }`}
-                    >
-                      {isCopied ? (
-                        <>
-                          <Check className="w-3 h-3" />
-                          <span>Copied</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3 h-3" />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-
-                  <div className="p-3 sm:p-4 space-y-1">
-                    <h4 className="text-xs sm:text-sm font-bold text-[#292720] truncate">
-                      {token.name}
-                    </h4>
-                    <p className="text-xs font-semibold text-[#75472F] font-bangla">
-                      {token.bengaliLabel}
-                    </p>
-                    <p className="text-[11px] text-[#777777]">
-                      {token.englishRole}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

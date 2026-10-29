@@ -191,10 +191,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <input
                       type="text"
                       required
+                      autoComplete="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Tanvir Ahmed"
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
 
@@ -204,11 +205,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </label>
                     <input
                       type="tel"
+                      inputMode="tel"
+                      autoComplete="tel"
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="e.g. 017XXXXXXXX"
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#183D32]"
+                      placeholder="e.g. +880 17... or +974..."
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
                 </div>
@@ -216,22 +219,22 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-[#292720] mb-1">
-                      Delivery City / District
+                      Delivery City / Region
                     </label>
                     <select
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm bg-white text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     >
-                      <option value="Dhaka">Dhaka</option>
+                      <option value="Doha">Doha (Qatar)</option>
+                      <option value="Dhaka">Dhaka (Bangladesh)</option>
                       <option value="Chittagong">Chittagong</option>
                       <option value="Sylhet">Sylhet</option>
-                      <option value="Rajshahi">Rajshahi</option>
-                      <option value="Khulna">Khulna</option>
-                      <option value="Barisal">Barisal</option>
-                      <option value="Rangpur">Rangpur</option>
-                      <option value="Mymensingh">Mymensingh</option>
-                      <option value="Other District">Other District</option>
+                      <option value="Al Wakrah">Al Wakrah</option>
+                      <option value="Al Rayyan">Al Rayyan</option>
+                      <option value="Lusail">Lusail</option>
+                      <option value="International Delivery">International Delivery</option>
+                      <option value="Other District">Other Region</option>
                     </select>
                   </div>
 
@@ -242,7 +245,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <select
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
-                      className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm bg-white focus:outline-none focus:border-[#183D32]"
+                      className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm bg-white text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     >
                       {CATEGORIES_LIST.map((c) => (
                         <option key={c.name} value={c.name}>
@@ -264,13 +267,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell us what you're looking for (wood type, room dimensions, custom finish preferences)..."
-                    className="w-full p-3 border border-[#E8E0D5] rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#183D32]"
+                    className="w-full p-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all leading-relaxed"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="cursor-pointer w-full bg-[#183D32] hover:bg-[#75472F] text-white py-3 rounded-lg font-bold text-xs sm:text-sm transition-colors"
+                  className="cursor-pointer w-full bg-[#183D32] hover:bg-[#75472F] text-white py-3.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm transition-colors shadow-xs active:scale-[0.99] min-h-[46px]"
                 >
                   Submit Inquiry
                 </button>

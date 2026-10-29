@@ -13,8 +13,8 @@ import {
   validateOrderInput,
 } from './storeLogic';
 
-test('default brand config is Uzvi Furniture with 8 categories and 20 products', () => {
-  assert.equal(DEFAULT_BRAND_CONFIG.companyName, 'Uzvi Furniture');
+test('default brand config is Qatar Elite Decor with 8 categories and 20 products', () => {
+  assert.equal(DEFAULT_BRAND_CONFIG.companyName, 'Qatar Elite Decor');
   assert.equal(DEFAULT_BRAND_CONFIG.currencySymbol, '৳');
   assert.equal(CATEGORIES_LIST.length, 8);
   assert.equal(INITIAL_PRODUCTS.length, 20);
@@ -33,12 +33,12 @@ test('validateBrandConfig enforces non-empty company name and allows customizati
   assert.equal(emptyCheck.valid, false);
 
   const customCheck = validateBrandConfig({
-    companyName: 'UZVI Home & Living',
-    heroTitle: 'Make Your Home More Beautiful',
+    companyName: 'Qatar Elite Decor',
+    heroTitle: 'Make Your Space Extraordinary',
     freeShippingThreshold: 20000,
   });
   assert.equal(customCheck.valid, true);
-  assert.equal(customCheck.sanitized?.companyName, 'UZVI Home & Living');
+  assert.equal(customCheck.sanitized?.companyName, 'Qatar Elite Decor');
   assert.equal(customCheck.sanitized?.freeShippingThreshold, 20000);
 });
 
@@ -80,8 +80,8 @@ test('cart calculations and WhatsApp message builder format BDT orders accuratel
   assert.equal(summary.subtotal, 13000);
   assert.equal(summary.totalItems, 2);
 
-  const msg = buildWhatsAppOrderMessage('Uzvi Furniture', summary, '৳');
-  assert.ok(msg.includes('Hello Uzvi Furniture, I want to order:'));
+  const msg = buildWhatsAppOrderMessage('Qatar Elite Decor', summary, '৳');
+  assert.ok(msg.includes('Hello Qatar Elite Decor, I want to order:'));
   assert.ok(msg.includes('Sculpted Wooden Floor Lamp x 2'));
 });
 

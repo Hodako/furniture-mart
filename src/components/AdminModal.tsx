@@ -147,7 +147,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
     onSaveBrandConfig(DEFAULT_BRAND_CONFIG);
     setBrandMessage({
       type: 'success',
-      text: 'Reset to default company name: Uzvi Furniture.',
+      text: 'Reset to default company name: Qatar Elite Decor.',
     });
   };
 
@@ -281,7 +281,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                     Company Name & Storefront Identity
                   </h3>
                   <p className="text-xs text-[#1C1917]/70 mt-1">
-                    Default company name is <strong>Uzvi Furniture</strong>.
+                    Default company name is <strong>Qatar Elite Decor</strong>.
                     Updating here updates the brand logo, hero, footer, and WhatsApp receipts instantly.
                   </p>
                 </div>
@@ -306,15 +306,15 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                       htmlFor="admin-company-name"
                       className="block text-xs font-bold uppercase tracking-wider text-[#75472F] mb-1"
                     >
-                      Company Name (Default: Uzvi Furniture)
+                      Company Name (Default: Qatar Elite Decor)
                     </label>
                     <input
                       id="admin-company-name"
                       type="text"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
-                      placeholder="Uzvi Furniture"
-                      className="w-full h-11 px-3.5 text-sm font-semibold rounded-lg bg-white border border-[#75472F]/30 text-[#1C1917] focus:outline-none focus:border-[#183D32]"
+                      placeholder="Qatar Elite Decor"
+                      className="w-full h-12 sm:h-11 px-4 text-[16px] sm:text-sm font-semibold rounded-xl bg-white border border-[#D8CEBE] text-[#1C1917] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                     />
                   </div>
 
@@ -414,7 +414,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                     className="cursor-pointer px-4 py-2.5 rounded-lg bg-[#EFE9DF] hover:bg-[#E5DDD0] text-[#1C1917] text-xs font-medium inline-flex items-center justify-center gap-1.5 transition-colors min-h-[42px]"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
-                    <span>Reset to Default (Uzvi Furniture)</span>
+                    <span>Reset to Default (Qatar Elite Decor)</span>
                   </button>
                 </div>
               </form>

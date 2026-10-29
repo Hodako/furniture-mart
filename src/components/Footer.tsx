@@ -132,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({
             </Link>
 
             <p className="text-xs sm:text-sm text-[#B4C2BA] leading-relaxed max-w-sm">
-              Uzvi Furniture crafts thoughtfully selected solid wood furniture, bespoke lighting, and refined interior decor to bring enduring elegance and natural warmth to homes across Bangladesh.
+              Qatar Elite Decor crafts thoughtfully selected solid wood furniture, bespoke lighting, and refined interior decor to bring enduring elegance and natural warmth to homes.
             </p>
 
             <div className="pt-1 space-y-2 text-xs text-[#C8D4CD]">
@@ -267,7 +267,7 @@ export const Footer: React.FC<FooterProps> = ({
               }`}
             >
               <Link to="/about" className="hover:text-white transition-colors">
-                About Uzvi Craftsmanship
+                About {brandConfig.companyName} Craftsmanship
               </Link>
               <Link to="/contact" className="hover:text-white transition-colors">
                 Showroom Visit & Inquiries
@@ -295,14 +295,14 @@ export const Footer: React.FC<FooterProps> = ({
           >
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase text-[#D4A45B]">
-                THE UZVI CIRCLE
+                THE ELITE CIRCLE
               </h3>
               <p className="text-xs text-[#B4C2BA] mt-1.5 leading-relaxed">
                 Join our VIP circle for seasonal furniture collections, interior design guides, and exclusive offers.
               </p>
             </div>
 
-            {/* Newsletter Input */}
+            {/* Newsletter Input - Mobile Ergonomic */}
             <form onSubmit={handleSubscribe} className="space-y-2">
               <div className="relative">
                 <input
@@ -311,11 +311,11 @@ export const Footer: React.FC<FooterProps> = ({
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                   placeholder="Enter your email address"
-                  className="w-full h-10 px-3.5 pr-10 rounded-lg bg-white/10 border border-white/20 text-xs text-white placeholder:text-[#8FA297] focus:outline-none focus:border-[#D4A45B] focus:bg-white/15"
+                  className="w-full h-12 sm:h-11 px-4 pr-12 rounded-xl bg-white/10 border border-white/20 text-[16px] sm:text-xs text-white placeholder:text-[#A8BDB2] focus:outline-none focus:border-[#D4A45B] focus:ring-2 focus:ring-[#D4A45B]/25 focus:bg-white/15 transition-all shadow-xs"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-md bg-[#D4A45B] hover:bg-[#c49348] text-[#0F2620] flex items-center justify-center transition-colors"
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-[#D4A45B] hover:bg-[#c49348] text-[#0F2620] flex items-center justify-center transition-colors shadow-xs"
                   aria-label="Subscribe"
                 >
                   <Send className="w-3.5 h-3.5" />
@@ -324,7 +324,7 @@ export const Footer: React.FC<FooterProps> = ({
 
               {subscribed && (
                 <div className="text-[11px] text-[#F0D7A6] font-semibold flex items-center gap-1.5 pt-1">
-                  <span>✓ Thank you for subscribing to Uzvi Circle!</span>
+                  <span>✓ Thank you for subscribing to {brandConfig.companyName}!</span>
                 </div>
               )}
             </form>

@@ -122,9 +122,9 @@ export const ShopPage: React.FC<ShopPageProps> = ({
         </div>
 
         {/* Search & Sort Toolbar */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-5 items-stretch sm:items-center justify-between">
+        <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-5 items-stretch sm:items-center justify-between">
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#75472F]" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#75472F]" />
             <input
               ref={searchInputRef}
               type="search"
@@ -132,16 +132,16 @@ export const ShopPage: React.FC<ShopPageProps> = ({
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search lamps, beds, wardrobes, tables..."
               aria-label="Search furniture products"
-              className="w-full h-10 sm:h-11 pl-9 pr-8 border border-[#E8E0D5] rounded-lg bg-white text-xs sm:text-sm text-[#292720] placeholder:text-[#999999] focus:outline-none focus:border-[#183D32]"
+              className="w-full h-12 sm:h-11 pl-10 pr-9 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-sm text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
                 aria-label="Clear search query"
-                className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-[#777777] hover:text-[#292720]"
+                className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-[#777777] hover:text-[#292720] p-1"
               >
-                <X className="w-3.5 h-3.5" />
+                <X className="w-4 h-4" />
               </button>
             )}
           </div>
@@ -155,7 +155,7 @@ export const ShopPage: React.FC<ShopPageProps> = ({
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 aria-label="Sort products by"
-                className="cursor-pointer w-full sm:w-auto h-10 sm:h-11 px-3 pr-8 border border-[#E8E0D5] rounded-lg bg-white text-xs sm:text-sm text-[#292720] font-medium appearance-none focus:outline-none focus:border-[#183D32]"
+                className="cursor-pointer w-full sm:w-auto h-12 sm:h-11 px-4 pr-9 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-sm text-[#292720] font-medium appearance-none shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
               >
                 <option value="featured">Sort: Featured</option>
                 <option value="price-asc">Price: Low to High</option>

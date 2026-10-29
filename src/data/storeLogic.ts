@@ -126,22 +126,22 @@ export const DESIGN_SYSTEM_COLORS: ColorToken[] = [
 ];
 
 export const DEFAULT_BRAND_CONFIG: BrandConfig = {
-  companyName: 'Uzvi Furniture',
-  companySubtitle: 'HOME & LIVING',
-  topBannerText: '✦ Premium Furniture · Home Decor · Delivery Across Bangladesh',
-  heroTitle: 'Make Your Home More Beautiful',
+  companyName: 'Qatar Elite Decor',
+  companySubtitle: 'LUXURY LIVING & BESPOKE INTERIORS',
+  topBannerText: '✦ Qatar Elite Decor · Luxury Furniture & Bespoke Interiors · Worldwide Delivery',
+  heroTitle: 'Make Your Space Extraordinary',
   heroSubtitle:
-    'Thoughtfully selected furniture and timeless details for a home that feels like you.',
-  craftHeading: 'Make Room for Better Living',
+    'Thoughtfully curated luxury furniture and timeless details for a home that embodies prestige.',
+  craftHeading: 'Make Room for Elite Living',
   freeShippingThreshold: 25000,
   currencySymbol: '৳',
   supportPhone: '+880 1711-849200',
-  supportEmail: 'info@uzvienterprise.com',
-  websiteUrl: 'uzvienterprise.com',
-  showroomAddress: 'Dhaka, Bangladesh',
+  supportEmail: 'care@qatarelitedecor.com',
+  websiteUrl: 'qatarelitedecor.com',
+  showroomAddress: 'Doha, Qatar',
   whatsappNumber: '+880 1711-849200',
   whatsappWidgetEnabled: true,
-  whatsappGreeting: 'Hello! Welcome to Uzvi Furniture. Need help choosing wood finish, custom furniture sizing, or order delivery across Bangladesh?',
+  whatsappGreeting: 'Hello! Welcome to Qatar Elite Decor. How may our concierge assist your luxury interior or bespoke furniture selection today?',
 };
 
 export const HERO_SLIDES: HeroSlide[] = [
@@ -219,7 +219,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-1',
     name: 'Sculpted Wooden Floor Lamp',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Wooden Lamp',
     price: 6500,
     oldPrice: 7800,
@@ -237,7 +237,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-2',
     name: 'Classic Walnut Wardrobe',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Wardrobe',
     price: 22000,
     oldPrice: 25500,
@@ -255,7 +255,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-3',
     name: 'Forest Green Lounge Sofa',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Sofa',
     price: 35000,
     oldPrice: 39000,
@@ -273,7 +273,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-4',
     name: 'Solid Wood Dining Table',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Table',
     price: 28000,
     oldPrice: 32000,
@@ -291,7 +291,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-5',
     name: 'Modern King Size Bed',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Bed',
     price: 32000,
     oldPrice: 36500,
@@ -327,7 +327,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-7',
     name: 'Carved Wooden Table Lamp',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Wooden Lamp',
     price: 4200,
     oldPrice: 5000,
@@ -345,7 +345,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-8',
     name: 'Two Door Wooden Almira',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Almira',
     price: 18500,
     oldPrice: 21000,
@@ -363,7 +363,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-9',
     name: 'Minimal Accent Chair',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Chair',
     price: 8500,
     oldPrice: 9900,
@@ -381,7 +381,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-10',
     name: 'Round Side Table',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Table',
     price: 6200,
     oldPrice: 7500,
@@ -399,7 +399,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-11',
     name: 'Three Door Wardrobe',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Wardrobe',
     price: 29500,
     oldPrice: 33500,
@@ -417,7 +417,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-12',
     name: 'Neutral Three Seater Sofa',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Sofa',
     price: 42000,
     oldPrice: 47000,
@@ -435,7 +435,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-13',
     name: 'Compact Single Bed',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Bed',
     price: 19500,
     oldPrice: 22500,
@@ -471,7 +471,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-15',
     name: 'Upholstered Dining Chair',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Chair',
     price: 5600,
     oldPrice: 6800,
@@ -489,7 +489,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-16',
     name: 'Walnut Bedside Table',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Table',
     price: 7200,
     oldPrice: 8500,
@@ -507,7 +507,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-17',
     name: 'Tall Display Cabinet',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Almira',
     price: 24500,
     oldPrice: 27900,
@@ -525,7 +525,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-18',
     name: 'Reading Corner Floor Lamp',
-    maker: 'UZVI Studio',
+    maker: 'Qatar Elite Studio',
     category: 'Wooden Lamp',
     price: 5900,
     oldPrice: 6900,
@@ -543,7 +543,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'prod-19',
     name: 'Wooden Writing Desk',
-    maker: 'UZVI Home',
+    maker: 'Qatar Elite Studio',
     category: 'Table',
     price: 12500,
     oldPrice: 14900,

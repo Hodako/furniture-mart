@@ -122,22 +122,22 @@ export const WhatsAppChatPopup: React.FC<WhatsAppChatPopupProps> = ({
               e.preventDefault();
               handleSendMessage();
             }}
-            className="p-2.5 bg-white border-t border-[#E8E0D5] flex items-center gap-2"
+            className="p-3 bg-white border-t border-[#E8E0D5] flex items-center gap-2"
           >
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type your message on WhatsApp..."
-              className="flex-1 h-9 px-3 rounded-full bg-[#F0F2F5] text-xs text-[#111B21] placeholder:text-[#667781] focus:outline-none focus:ring-1 focus:ring-[#128C7E]"
+              className="flex-1 h-11 sm:h-9 px-4 sm:px-3 rounded-full bg-[#F0F2F5] text-[16px] sm:text-xs text-[#111B21] placeholder:text-[#667781] border border-transparent focus:border-[#128C7E]/40 focus:outline-none focus:ring-2 focus:ring-[#128C7E]/20 transition-all shadow-xs"
             />
             <button
               type="submit"
               disabled={!message.trim()}
-              className="w-9 h-9 rounded-full bg-[#128C7E] disabled:opacity-40 hover:bg-[#0E7165] text-white flex items-center justify-center transition-colors shrink-0 shadow-xs"
+              className="w-11 h-11 sm:w-9 sm:h-9 rounded-full bg-[#128C7E] disabled:opacity-40 hover:bg-[#0E7165] text-white flex items-center justify-center transition-colors shrink-0 shadow-xs active:scale-95"
               aria-label="Send via WhatsApp"
             >
-              <Send className="w-3.5 h-3.5" />
+              <Send className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
             </button>
           </form>
         </div>

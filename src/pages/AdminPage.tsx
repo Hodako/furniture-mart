@@ -112,7 +112,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   );
   const [whatsappGreeting, setWhatsappGreeting] = useState(
     brandConfig.whatsappGreeting ||
-      'Hello! Welcome to Uzvi Furniture. Need help choosing wood finish, custom furniture sizing, or order delivery across Bangladesh?'
+      'Hello! Welcome to Qatar Elite Decor. How may our concierge assist your luxury interior or bespoke furniture selection today?'
   );
   const [brandStatus, setBrandStatus] = useState<string | null>(null);
 
@@ -164,12 +164,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({
     setFreeShippingThreshold(String(brandConfig.freeShippingThreshold));
     setSupportPhone(brandConfig.supportPhone);
     setShowroomAddress(brandConfig.showroomAddress);
-    setSupportEmail(brandConfig.supportEmail || 'care@uzvifurniture.com');
+    setSupportEmail(brandConfig.supportEmail || 'care@qatarelitedecor.com');
     setWhatsappNumber(brandConfig.whatsappNumber || brandConfig.supportPhone);
     setWhatsappWidgetEnabled(brandConfig.whatsappWidgetEnabled !== false);
     setWhatsappGreeting(
       brandConfig.whatsappGreeting ||
-        'Hello! Welcome to Uzvi Furniture. Need help choosing wood finish, custom furniture sizing, or order delivery across Bangladesh?'
+        'Hello! Welcome to Qatar Elite Decor. How may our concierge assist your luxury interior or bespoke furniture selection today?'
     );
   }, [brandConfig]);
 
@@ -233,16 +233,16 @@ export const AdminPage: React.FC<AdminPageProps> = ({
     e.preventDefault();
     const updated: BrandConfig = {
       ...brandConfig,
-      companyName: companyName.trim() || 'Uzvi Furniture',
-      companySubtitle: companySubtitle.trim() || 'HOME & LIVING',
-      heroTitle: heroTitle.trim() || 'Make Your Home More Beautiful',
+      companyName: companyName.trim() || 'Qatar Elite Decor',
+      companySubtitle: companySubtitle.trim() || 'LUXURY LIVING & BESPOKE INTERIORS',
+      heroTitle: heroTitle.trim() || 'Make Your Space Extraordinary',
       heroSubtitle:
         heroSubtitle.trim() ||
-        'Thoughtfully selected furniture and timeless details for a home that feels like you.',
+        'Thoughtfully curated luxury furniture and timeless details for a home that embodies prestige.',
       freeShippingThreshold: Math.max(0, parseInt(freeShippingThreshold, 10) || 50000),
       supportPhone: supportPhone.trim() || '+880 1711-849200',
-      showroomAddress: showroomAddress.trim() || 'Dhaka, Bangladesh',
-      supportEmail: supportEmail.trim() || 'care@uzvifurniture.com',
+      showroomAddress: showroomAddress.trim() || 'Doha, Qatar',
+      supportEmail: supportEmail.trim() || 'care@qatarelitedecor.com',
       whatsappNumber: whatsappNumber.trim() || supportPhone.trim(),
       whatsappWidgetEnabled,
       whatsappGreeting: whatsappGreeting.trim(),
@@ -261,7 +261,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   };
 
   const handleResetToDefault = () => {
-    if (window.confirm('Reset brand settings back to Uzvi Furniture original defaults?')) {
+    if (window.confirm('Reset brand settings back to Qatar Elite Decor original defaults?')) {
       onSaveBrandConfig(DEFAULT_BRAND_CONFIG);
       setCompanyName(DEFAULT_BRAND_CONFIG.companyName);
       setCompanySubtitle(DEFAULT_BRAND_CONFIG.companySubtitle);
@@ -275,7 +275,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
       setWhatsappWidgetEnabled(true);
       setWhatsappGreeting(DEFAULT_BRAND_CONFIG.whatsappGreeting || '');
       setBrandStatus('Reset to default brand identity');
-      onNotify('Brand reset to default Uzvi Furniture');
+      onNotify('Brand reset to default Qatar Elite Decor');
       setTimeout(() => setBrandStatus(null), 3000);
     }
   };
@@ -1391,7 +1391,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   Company Name, Contact & Floating Chat
                 </h2>
                 <p className="text-xs text-[#777777] mt-1">
-                  Default company name is <strong>Uzvi Furniture</strong>. Changes sync instantly across the website header, footer, hero section, and floating WhatsApp concierge.
+                  Default company name is <strong>Qatar Elite Decor</strong>. Changes sync instantly across the website header, footer, hero section, and floating WhatsApp concierge.
                 </p>
               </div>
 
@@ -1405,14 +1405,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({
               <form onSubmit={handleSaveBrand} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-[#75472F] uppercase tracking-wider mb-1">
-                    Company Name (Default: Uzvi Furniture)
+                    Company Name (Default: Qatar Elite Decor)
                   </label>
                   <input
                     type="text"
                     required
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
-                    className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm font-semibold text-[#292720] focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm font-semibold text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
 
@@ -1424,7 +1424,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     type="text"
                     value={companySubtitle}
                     onChange={(e) => setCompanySubtitle(e.target.value)}
-                    className="w-full h-11 px-3.5 border border-[#E8E0D5] rounded-lg text-sm text-[#292720] focus:outline-none focus:border-[#183D32]"
+                    className="w-full h-12 sm:h-11 px-4 border border-[#D8CEBE] rounded-xl text-[16px] sm:text-sm text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                   />
                 </div>
 
@@ -1458,10 +1458,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       </label>
                       <input
                         type="text"
+                        inputMode="tel"
                         value={whatsappNumber}
                         onChange={(e) => setWhatsappNumber(e.target.value)}
                         placeholder="+880 1711-849200"
-                        className="w-full h-9 px-3 border border-[#E8E0D5] rounded-lg bg-white focus:outline-none focus:border-[#183D32]"
+                        className="w-full h-12 sm:h-10 px-4 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-xs text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                       />
                     </div>
 
@@ -1473,8 +1474,8 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                         type="text"
                         value={whatsappGreeting}
                         onChange={(e) => setWhatsappGreeting(e.target.value)}
-                        placeholder="Hello! Welcome to Uzvi Furniture..."
-                        className="w-full h-9 px-3 border border-[#E8E0D5] rounded-lg bg-white focus:outline-none focus:border-[#183D32]"
+                        placeholder="Hello! Welcome to Qatar Elite Decor..."
+                        className="w-full h-12 sm:h-10 px-4 border border-[#D8CEBE] rounded-xl bg-white text-[16px] sm:text-xs text-[#292720] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                       />
                     </div>
                   </div>
@@ -1566,10 +1567,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   <button
                     type="button"
                     onClick={handleResetToDefault}
-                    className="cursor-pointer bg-[#F7F3ED] hover:bg-[#E8E0D5] text-[#75472F] border border-[#E8E0D5] py-3 px-5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                    className="cursor-pointer bg-[#F7F3ED] hover:bg-[#E8E0D5] text-[#75472F] border border-[#E8E0D5] py-3 px-5 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
-                    <span>Reset to Default (Uzvi Furniture)</span>
+                    <span>Reset to Default (Qatar Elite Decor)</span>
                   </button>
                 </div>
               </form>
@@ -1586,10 +1587,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                 <div className="p-4 rounded-xl bg-[#FFFDF9] border border-[#E8E0D5] flex items-center justify-between">
                   <div>
                     <div className="font-display font-black text-lg text-[#183D32] tracking-wider uppercase">
-                      {companyName || 'UZVI'}
+                      {companyName || 'QATAR ELITE DECOR'}
                     </div>
                     <div className="text-[9px] font-bold tracking-[0.2em] text-[#75472F] uppercase">
-                      {companySubtitle || 'FURNITURE'}
+                      {companySubtitle || 'LUXURY LIVING & BESPOKE INTERIORS'}
                     </div>
                   </div>
                   <span className="text-[10px] text-[#777777] bg-white px-2 py-1 rounded border border-[#E8E0D5]">
@@ -1607,10 +1608,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     PREMIUM SOLID TIMBER
                   </span>
                   <h4 className="font-display font-bold text-base sm:text-lg leading-tight">
-                    {heroTitle || 'Make Your Home More Beautiful'}
+                    {heroTitle || 'Make Your Space Extraordinary'}
                   </h4>
                   <p className="text-[11px] text-[#E8E0D5] line-clamp-2">
-                    {heroSubtitle || 'Thoughtfully selected furniture for modern living.'}
+                    {heroSubtitle || 'Thoughtfully curated luxury furniture for modern living.'}
                   </p>
                 </div>
 
@@ -1690,7 +1691,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     Factory Reset Catalog
                   </div>
                   <div className="text-[11px] text-red-700 mt-0.5">
-                    Restores the catalog back to Uzvi Furniture's original 20 products and resets brand config.
+                    Restores the catalog back to Qatar Elite Decor's original 20 products and resets brand config.
                   </div>
                 </div>
                 <button

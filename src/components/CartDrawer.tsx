@@ -327,54 +327,58 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       <div>
                         <label
                           htmlFor="bag-fullname"
-                          className="block text-[11px] font-semibold text-[#292720] mb-0.5"
+                          className="block text-xs font-semibold text-[#292720] mb-1"
                         >
                           Full Name
                         </label>
                         <input
                           id="bag-fullname"
                           type="text"
+                          autoComplete="name"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
                           placeholder="Your Full Name"
-                          className="w-full h-10 px-3 text-xs border border-[#E8E0D5] rounded bg-white"
+                          className="w-full h-12 sm:h-11 px-4 text-[16px] sm:text-sm border border-[#D8CEBE] rounded-xl bg-white text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                         />
                       </div>
                       <div>
                         <label
                           htmlFor="bag-phone"
-                          className="block text-[11px] font-semibold text-[#292720] mb-0.5"
+                          className="block text-xs font-semibold text-[#292720] mb-1"
                         >
-                          Phone Number
+                          Phone Number (WhatsApp)
                         </label>
                         <input
                           id="bag-phone"
                           type="tel"
+                          inputMode="tel"
+                          autoComplete="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+880 17..."
-                          className="w-full h-10 px-3 text-xs border border-[#E8E0D5] rounded bg-white"
+                          placeholder="+880 17... or +974..."
+                          className="w-full h-12 sm:h-11 px-4 text-[16px] sm:text-sm border border-[#D8CEBE] rounded-xl bg-white text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                         />
                       </div>
                       <div>
                         <label
                           htmlFor="bag-address"
-                          className="block text-[11px] font-semibold text-[#292720] mb-0.5"
+                          className="block text-xs font-semibold text-[#292720] mb-1"
                         >
                           Delivery Address
                         </label>
                         <input
                           id="bag-address"
                           type="text"
+                          autoComplete="street-address"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          placeholder="House, Road, Area, City"
-                          className="w-full h-10 px-3 text-xs border border-[#E8E0D5] rounded bg-white"
+                          placeholder="House, Street, Area, City"
+                          className="w-full h-12 sm:h-11 px-4 text-[16px] sm:text-sm border border-[#D8CEBE] rounded-xl bg-white text-[#292720] placeholder:text-[#9C9488] shadow-xs focus:outline-none focus:border-[#183D32] focus:ring-2 focus:ring-[#183D32]/15 transition-all"
                         />
                       </div>
                       <button
                         type="submit"
-                        className="cursor-pointer w-full bg-[#75472F] hover:bg-[#183D32] text-white rounded-[7px] py-2.5 px-4 font-bold text-xs transition-colors min-h-[42px]"
+                        className="cursor-pointer w-full bg-[#183D32] hover:bg-[#75472F] text-white rounded-xl py-3 px-4 font-bold text-xs sm:text-sm transition-colors min-h-[46px] shadow-xs flex items-center justify-center mt-2"
                       >
                         Confirm Order Now →
                       </button>
