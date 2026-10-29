@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --green: #183d32;
+    --cream: #f7f3ed;
+    --brown: #75472f;
+    --gold: #d4a45b;
+    --white: #fffdf9;
+    --line: #e8e0d5;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--white);
+    color: #292720;
+    font-family: 'Roboto', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display, .font-brand {
+    font-family: 'Montserrat', 'Hind Siliguri', -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-bangla {
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'Roboto', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Roboto', 'Noto Sans Bengali', sans-serif;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Hide scrollbar for mobile swipeable containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch-optimized button feedback */
+button:active {
+  transform: scale(0.98);
+}

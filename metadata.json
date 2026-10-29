@@ -1,0 +1,6 @@
+{
+  "name": "Uzvi Furniture — Modern Handcrafted Living",
+  "description": "Artisanal wooden furniture and modern interior collection featuring customizable brand administration, curated collections, and seamless ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
