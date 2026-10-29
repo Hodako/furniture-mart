@@ -22,6 +22,7 @@ import { MobileNav } from './components/MobileNav';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { CartDrawer } from './components/CartDrawer';
+import { WhatsAppChatPopup } from './components/WhatsAppChatPopup';
 
 // Multi-Page Routes
 import { HomePage } from './pages/HomePage';
@@ -44,11 +45,14 @@ const STORAGE_KEYS = {
 function AppShell({
   children,
 }: {
-  children: (isProductPage: boolean) => React.ReactNode;
+  children: (isProductPage: boolean, isAdminPage: boolean) => React.ReactNode;
 }) {
   const location = useLocation();
   const isProductPage = location.pathname.startsWith('/product/');
-  return <>{children(isProductPage)}</>;
+  const isAdminPage =
+    location.pathname.startsWith('/whoisadmin') ||
+    location.pathname.startsWith('/admin');
+  return <>{children(isProductPage, isAdminPage)}</>;
 }
 
 export default function App() {
@@ -230,9 +234,21 @@ export default function App() {
     setProducts((prev) => [newProduct, ...prev]);
   };
 
+  const handleUpdateProduct = (updatedProduct: Product) => {
+    setProducts((prev) =>
+      prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+    );
+    showToast(`Updated "${updatedProduct.name}"`);
+  };
+
   const handleDeleteProduct = (productId: string) => {
     setProducts((prev) => prev.filter((p) => p.id !== productId));
     showToast('Product removed from catalog');
+  };
+
+  const handleResetProducts = () => {
+    setProducts(INITIAL_PRODUCTS);
+    showToast('Catalog restored to default 20 items');
   };
 
   const handleUpdateOrderStatus = (
@@ -245,14 +261,34 @@ export default function App() {
     showToast(`Order #${orderId} marked as ${status}`);
   };
 
+  const handleDeleteOrder = (orderId: string) => {
+    setOrders((prev) => prev.filter((o) => o.id !== orderId));
+    showToast(`Order #${orderId} deleted`);
+  };
+
+  const handleImportData = (data: {
+    brandConfig?: BrandConfig;
+    products?: Product[];
+    orders?: Order[];
+  }) => {
+    if (data.brandConfig) setBrandConfig(data.brandConfig);
+    if (data.products && Array.isArray(data.products) && data.products.length > 0) {
+      setProducts(data.products);
+    }
+    if (data.orders && Array.isArray(data.orders)) {
+      setOrders(data.orders);
+    }
+    showToast('Store data successfully imported!');
+  };
+
   return (
     <BrowserRouter>
       <ScrollToTop />
       <AppShell>
-        {(isProductPage) => (
+        {(isProductPage, isAdminPage) => (
           <div
             className={`min-h-screen bg-[#FFFDF9] text-[#292720] flex flex-col font-body ${
-              isProductPage ? 'pb-0' : 'pb-16 md:pb-0'
+              isProductPage || isAdminPage ? 'pb-0' : 'pb-16 md:pb-0'
             }`}
           >
             {/* Clean Sticky Header (No top banner, no frontend admin link) */}
@@ -339,8 +375,12 @@ export default function App() {
                       orders={orders}
                       onSaveBrandConfig={handleSaveBrandConfig}
                       onAddProduct={handleAddProduct}
+                      onUpdateProduct={handleUpdateProduct}
                       onDeleteProduct={handleDeleteProduct}
+                      onResetProducts={handleResetProducts}
                       onUpdateOrderStatus={handleUpdateOrderStatus}
+                      onDeleteOrder={handleDeleteOrder}
+                      onImportData={handleImportData}
                       onNotify={showToast}
                     />
                   }
@@ -355,13 +395,18 @@ export default function App() {
             {/* Footer (with isProductPage to hide footer menus on mobile) */}
             <Footer brandConfig={brandConfig} isProductPage={isProductPage} />
 
-            {/* Phone-Optimized Bottom Navigation Dock (Home, Shop, Collections, Wishlist, Bag) - Hidden on product page */}
-            {!isProductPage && (
+            {/* Phone-Optimized Bottom Navigation Dock - Hidden on product page and admin */}
+            {!isProductPage && !isAdminPage && (
               <MobileNav
                 totalCartItems={cartSummary.totalItems}
                 totalWishlistItems={wishlistIds.length}
                 onOpenCart={() => setIsCartOpen(true)}
               />
+            )}
+
+            {/* Floating WhatsApp Live Concierge Popup (hidden on admin page) */}
+            {!isAdminPage && (
+              <WhatsAppChatPopup brandConfig={brandConfig} />
             )}
 
             {/* Floating Toast Notification */}

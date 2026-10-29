@@ -29,6 +29,9 @@ export interface BrandConfig {
   supportEmail: string;
   websiteUrl: string;
   showroomAddress: string;
+  whatsappNumber?: string;
+  whatsappWidgetEnabled?: boolean;
+  whatsappGreeting?: string;
 }
 
 export type ProductCategory =
@@ -87,7 +90,7 @@ export interface Order {
   subtotal: number;
   shippingFee: number;
   total: number;
-  status: 'Preparing Shipment' | 'In Transit' | 'Delivered';
+  status: 'Preparing Shipment' | 'In Transit' | 'Delivered' | 'Cancelled';
   createdAt: string;
 }
 
@@ -135,7 +138,10 @@ export const DEFAULT_BRAND_CONFIG: BrandConfig = {
   supportPhone: '+880 1711-849200',
   supportEmail: 'info@uzvienterprise.com',
   websiteUrl: 'uzvienterprise.com',
-  showroomAddress: 'Bangladesh',
+  showroomAddress: 'Dhaka, Bangladesh',
+  whatsappNumber: '+880 1711-849200',
+  whatsappWidgetEnabled: true,
+  whatsappGreeting: 'Hello! Welcome to Uzvi Furniture. Need help choosing wood finish, custom furniture sizing, or order delivery across Bangladesh?',
 };
 
 export const HERO_SLIDES: HeroSlide[] = [

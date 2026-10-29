@@ -19,21 +19,23 @@
     margin: 0;
     background-color: var(--white);
     color: #292720;
-    font-family: 'Roboto', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Ekushey Lal Sabuj', 'Roboto', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     overflow-x: hidden;
   }
 
   h1, h2, h3, .font-display, .font-brand {
-    font-family: 'Montserrat', 'Hind Siliguri', -apple-system, sans-serif;
+    font-family: 'Montserrat', 'Ekushey Lal Sabuj', 'Hind Siliguri', -apple-system, sans-serif;
     letter-spacing: -0.02em;
   }
 
   .font-bangla {
-    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'Roboto', sans-serif;
+    font-family: 'Ekushey Lal Sabuj', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
   }
 
   .font-body {
-    font-family: 'Roboto', 'Noto Sans Bengali', sans-serif;
+    font-family: 'Ekushey Lal Sabuj', 'Roboto', 'Noto Sans Bengali', sans-serif;
   }
 
   .font-mono-tabular {
